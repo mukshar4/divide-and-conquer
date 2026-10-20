@@ -1,25 +1,20 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Location> locations = new ArrayList<>();
+        ArrayList<Integer> deliveryTimes =
+                new ArrayList<>(
+                        Arrays.asList(
+                                18, 4, 29, 11, 4,
+                                16, 35, 9, 22));
 
-        locations.add(new Location("A", -3, 1));
-        locations.add(new Location("B", -3, 11));
-        locations.add(new Location("C", 1, 1));
-        locations.add(new Location("D", 2, 15));
+        int result =
+                TaskC.findKthSmallest(deliveryTimes, 5);
 
-        ClosestPairResult result =
-                TaskA.findClosestPair(locations);
-
-        System.out.println("Closest pair: "
-                + result.getFirstId()
-                + " and "
-                + result.getSecondId());
-
-        System.out.println("Squared distance: "
-                + result.getDistanceSquared());
+        System.out.println(
+                "5th smallest value: " + result);
     }
 }
